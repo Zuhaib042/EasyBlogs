@@ -23,8 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: EasyBlogs_development
-
+  database: easy_blogs
+  username: zuhaib-microverse
+  password: 0325
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -57,7 +58,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: EasyBlogs_test
+  database: easy_blogs_test
+  username: zuhaib-microverse
+  password: 0325
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: EasyBlogs_production
-  username: EasyBlogs
-  password: <%= ENV["EASYBLOGS_DATABASE_PASSWORD"] %>
+  database: easy_blogs
+  username: zuhaib-microverse
+  password: 0325
