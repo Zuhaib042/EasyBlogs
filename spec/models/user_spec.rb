@@ -1,21 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')}
+  subject { User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
 
   before { subject.save }
 
-  it "is not valid without a title" do
+  it 'is not valid without a title' do
     subject.name = nil
     expect(subject).to_not be_valid
   end
-  
-  it "is not valid when posts_counter is less than 0" do
+
+  it 'is not valid when posts_counter is less than 0' do
     subject.posts_counter = -1
     expect(subject).to be_invalid
   end
 
-  it "is valid when posts_counter is greater than 0" do
+  it 'is valid when posts_counter is greater than 0' do
     subject.posts_counter = 20
     expect(subject).to be_valid
   end
@@ -30,5 +30,4 @@ RSpec.describe User, type: :model do
       expect(subject.recent_posts).to eq subject.posts.order(created_at: :desc).limit(3)
     end
   end
-
 end

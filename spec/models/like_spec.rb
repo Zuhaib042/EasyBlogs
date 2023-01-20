@@ -12,10 +12,8 @@ RSpec.describe Like, type: :model do
     expect(subject.author_id).to eq user.id
   end
 
-  describe "Associations" do
+  describe 'Associations' do
     it { should belong_to(:author) }
     it { should belong_to(:post) }
   end
-
-
 end
