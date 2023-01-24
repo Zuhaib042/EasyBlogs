@@ -9,6 +9,7 @@
 user1 = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
 user2 = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
 user3 = User.create(name: 'Shelby', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Australia.')
+user4 = User.create(name: 'Sunny', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from india.')
 
 post1 = Post.create(author_id: user2.id, title: 'Hello', text: 'This is my first post')
 post2 = Post.create(author_id: user2.id, title: 'Hello', text: 'This is my second post')
