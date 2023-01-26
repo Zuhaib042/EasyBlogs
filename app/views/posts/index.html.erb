@@ -1,1 +1,25 @@
-<h1>All posts of a specific author would be displaye here</h1>
+<section class= mt-2>
+ <div class='container grid'>
+  <%= render partial: "shared/user", locals: { user: @user } %>
+  
+<% @posts.each do |post| %>
+
+ <h4><%= link_to post.title, user_post_path(@user, post) %></h4>
+ <p><%= post.text %></p>
+ <p>
+ <small>Comments: <%= post.comments_counter || 0 %>,</small> 
+ <small>Likes: <%= post.likes_counter || 0 %></small>
+ </p>
+  
+  <% post.recent_comments.each do |comment| %>
+  <div class="row d-flex flex-column border mx-1 mb-2">
+  <div class='col p-2'> 
+   <%= comment.author.name %> : <%= comment.text %>
+  </div>
+  </div>
+  <% end  %>
+<% end %>
+
+</section>
+
+
