@@ -1,0 +1,9 @@
+<div class="row mb-4">
+      <div class='col-2'>
+        <%= image_tag user.photo , class: 'user-photo' , alt: user.name %>
+      </div>
+      <div class='col-10 border border-dark font-bold p-2'>
+        <%= link_to user.name , "/users/#{user.id}" , class:'font-weight-bold h5' %>
+        <p> Number of Posts: <%= user.posts_counter.nil? ? 0 : user.posts_counter  %> </p>
+      </div>
+ </div>
