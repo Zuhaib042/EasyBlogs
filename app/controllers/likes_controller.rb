@@ -10,4 +10,3 @@ class LikesController < ApplicationController
     end
   end
 end
-# "/users/#{@like.author_id}/posts/#{@like.post_id}"
