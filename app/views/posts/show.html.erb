@@ -9,9 +9,11 @@
  </div>
  
  <p><%= @post.text %></p>
-
 </div>
-
+<div>
+  <%= link_to 'Add a new comment', new_user_post_comment_path(@user, @post) %>
+  <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %>
+</div>
 <div class="border mt-3"> 
   <% @post.comments.each do |comment| %>
   <div class="row d-flex flex-column mx-1 mb-2">
