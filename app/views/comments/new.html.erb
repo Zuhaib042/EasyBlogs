@@ -1,0 +1,8 @@
+<h5> Create a new Comment:</h5>
+<%= form_with model: @comment, url: user_post_comments_url , method: :post do |form| %>
+   <div class="form-group">
+    <%= form.label :text , "Text" %>
+    <%= form.text_area :text , required: true %>
+   </div> 
+    <%= form.submit "Post Comment" %>
+<% end %>
