@@ -58,6 +58,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails', '>= 3.9.0'
   gem 'shoulda-matchers'
+  # gem to manage environment variables
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -79,3 +81,5 @@ group :test do
 end
 
 gem 'cssbundling-rails', '~> 1.1'
+
+gem 'tailwindcss-rails', '~> 2.0'
