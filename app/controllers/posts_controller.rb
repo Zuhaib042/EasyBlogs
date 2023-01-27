@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @post = Post.where(id: params[:id], author_id: params[:user_id]).first
+    @post = @user.posts.find(params[:id])
   end
 
   def new
@@ -23,10 +23,10 @@ class PostsController < ApplicationController
       render :new
     end
   end
- 
+
   private
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
 end
