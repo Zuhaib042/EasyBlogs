@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'User show method ', type: :feature do
-  
   before(:each) do
     @user = User.first
     visit(user_path(@user.id))
