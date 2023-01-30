@@ -8,7 +8,7 @@ RSpec.describe 'User index method which is also homepage', type: :feature do
       User.create(name: 'Sunny', photo: 'user4.jpg', bio: 'Teacher from india.', posts_counter: 7),
       User.create(name: 'Tom', photo: 'user1.jpg', bio: 'Teacher from Mexico.', posts_counter: 2)
     ]
-    visit user_path
+    visit root_path
   end
   it 'shows usernames of all users' do
     @users.each do |user|
@@ -24,7 +24,7 @@ RSpec.describe 'User index method which is also homepage', type: :feature do
 
   it 'shows the number of posts each user has' do
     @users.each do |user|
-      expect(page).to have_content(user.posts_counter)
+      expect(page).to have_content("Number of Posts: #{user.posts_counter}")
     end
   end
 
