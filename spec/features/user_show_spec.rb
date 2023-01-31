@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User show method ', type: :feature do
+  # rubocop:disable Layout/LineLength
   before(:example) do
     @user = User.create(name: 'Lilly',
                         photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2432&q=80', bio: 'Teacher from Poland.', posts_counter: 10)
@@ -11,6 +12,7 @@ RSpec.describe 'User show method ', type: :feature do
                           comments_counter: 0),
               Post.create(author: @user, title: 'What"s up', text: 'This is my third post', likes_counter: 0,
                           comments_counter: 0)]
+    # rubocop:enable Layout/LineLength
     visit user_path(@user)
   end
 
