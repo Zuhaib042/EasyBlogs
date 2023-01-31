@@ -1,27 +1,25 @@
 <section class="container">
-<div class="row border mt-3 p-3">
- <div class="d-flex justify-content-between w-100">
-   <h5 class=""><%= @post.title %> by <%= @user.name %></h5>
-   <p class="text-right">
-    <small>Comments: <%= @post.comments_counter || 0 %>,</small> 
-    <small>Likes: <%= @post.likes_counter || 0 %></small>
-   </p>
- </div>
- 
- <p><%= @post.text %></p>
-</div>
-<div>
-  <%= link_to 'Add a new comment', new_user_post_comment_path(@user, @post) %>
-  <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %>
-</div>
-<div class="border mt-3"> 
-  <% @post.comments.each do |comment| %>
-  <div class="row d-flex flex-column mx-1 mb-2">
-  <div class='col p-2'> 
-   <%= comment.author.name %> : <%= comment.text %>
+  <div class="row border mt-3 p-3">
+    <div class="d-flex justify-content-between w-100">
+      <h5 class=""><%= @post.title %> by <%= @user.name %></h5>
+      <p class="text-right">
+        <small>Comments: <%= @post.comments_counter || 0 %>,</small>
+        <small>Likes: <%= @post.likes_counter || 0 %></small>
+      </p>
+    </div>
+    <p><%= @post.text %></p>
   </div>
+  <div>
+    <%= link_to 'Add a new comment', new_user_post_comment_path(@user, @post) %>
+    <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %>
   </div>
-  <% end  %>
-</div>
-
+  <div class="border mt-3">
+    <% @post.comments.each do |comment| %>
+      <div class="row d-flex flex-column mx-1 mb-2">
+        <div class='col p-2'>
+          <%= comment.author.name %> : <%= comment.text %>
+        </div>
+      </div>
+    <% end  %>
+  </div>
 </section>
