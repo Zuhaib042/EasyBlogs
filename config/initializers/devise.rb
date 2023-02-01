@@ -15,6 +15,9 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '5e2b8a4179079c59282bd143ca4716ff19fd98cf5a833d327651c7f18dd6ce75c0fd5e26c33568efd6fe194ad557728361db6f60a062f3cde2ffa419db2941df'
+  
+  # adding turbo stream for links
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
