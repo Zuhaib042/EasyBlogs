@@ -5,5 +5,14 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <% if user_signed_in? %>
+          <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } , class: 'ml-5 btn btn-primary my-2' %>
+        <% else %>
+          <%= link_to 'Sign in', new_user_session_path , class: 'ml-5 btn btn-primary my-2' %>
+        <% end %>
+      </li>
+    </ul>
   </div>
 </nav>
