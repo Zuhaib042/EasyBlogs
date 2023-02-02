@@ -8,16 +8,16 @@ class CommentsController < ApplicationController
     @comment.post_id = params[:post_id]
 
     if @comment.save
-      redirect_to user_post_path(@comment.author, @comment.post)
+      redirect_to user_post_path(params[:user_id], params[:post_id])
+      flash[:success] = 'Comment added successfully'
     else
       @user = Post.find(params[:user_id])
       @post = Post.find(params[:post_id])
+      flash.now[:error] = 'Error: Comment could not be deleted'
       redirect_to user_post_path(@user, @post)
     end
   end
 
-  private
-  
   def destroy
     comment = Comment.find(params[:id])
     if comment.destroy
@@ -27,6 +27,9 @@ class CommentsController < ApplicationController
     end
   end 
 
+
+  private
+  
   def comment_params
     params.require(:comment).permit(:text)
   end
