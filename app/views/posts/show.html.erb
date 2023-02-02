@@ -9,17 +9,25 @@
     </div>
     <p><%= @post.text %></p>
   </div>
-  <div>
+  <div classs="d-flex ">
     <%= link_to 'Add a new comment', new_user_post_comment_path(@user, @post) %>
-    <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %>
+    <%= link_to 'Like', user_post_likes_path(@user, @post),  data: { turbo_method: :post }, class: 'btn btn-primary' %>
+    <% if can? :destroy, @post %>
+      <%= link_to 'Delete', user_post_path(@user, @post), data: { turbo_method: :delete }, class: 'btn btn-danger' %>
+    <% end %>
   </div>
-  <div class="border mt-3">
+  <div class="border mt-3 p-2">
     <% @post.comments.each do |comment| %>
-      <div class="row d-flex flex-column mx-1 mb-2">
+      <div class="row d-flex align-items-center mx-1 mb-2">
         <div class='col p-2'>
           <%= comment.author.name %> : <%= comment.text %>
         </div>
+        <% if can? :destroy, @post %>
+          <span>
+            <%= link_to 'Delete', user_post_comment_path(@user, @post, comment) , data: { turbo_method: :delete}, class: "py-2 px-4 btn btn-danger text-white" %>
+          </span>
+        <% end %>
       </div>
-    <% end  %>
+    <% end %>
   </div>
 </section>

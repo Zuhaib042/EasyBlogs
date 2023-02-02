@@ -4,7 +4,13 @@ class Comment < ApplicationRecord
 
   after_save :update_comments_counter
 
+  after_destroy :decrement_comments_counter
+
   private
+
+  def decrement_comments_counter
+    post.decrement!(:comments_counter)
+  end
 
   def update_comments_counter
     post.increment!(:comments_counter)

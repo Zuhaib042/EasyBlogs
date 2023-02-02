@@ -146,11 +146,17 @@ To run tests, run the following command:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **Zuhaib Amjad**
 
 - GitHub: [@Zuhaib042](https://github.com/Zuhaib042)
 - Twitter: [@Zuhaib042](https://twitter.com/Zuhaib042)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+👤 **OmarMWarraich**
+
+- GitHub: [@OmarMWarraich](https://github.com/OmarMWarraich)
+- Twitter: [@omarwarraich1](https://twitter.com/omarwarraich1)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/o-va)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
     user_url(current_user)
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: exception.message
+  end
+
   protected
 
   def configure_permitted_parameters
