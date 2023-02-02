@@ -25,11 +25,10 @@ class CommentsController < ApplicationController
     else
       flash.now[:error] = 'Error: Comment could not be deleted'
     end
-  end 
-
+  end
 
   private
-  
+
   def comment_params
     params.require(:comment).permit(:text)
   end

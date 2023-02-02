@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     else
       flash.now[:error] = 'Error: Post could not be deleted'
     end
-  end 
+  end
 
   private
 

@@ -3,11 +3,11 @@ class Comment < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   after_save :update_comments_counter
-  
+
   after_destroy :decrement_comments_counter
-  
+
   private
-  
+
   def decrement_comments_counter
     post.decrement!(:comments_counter)
   end
