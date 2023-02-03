@@ -1,8 +1,8 @@
 <section class= mt-2>
- <h1>List of All Users</h1>
- <div class='container grid'>
- <% @users.each do |user| %>
-  <%= render partial: "shared/user", locals: { user: user } %>
- <% end %>
- </div>
+  <h1>List of All Users</h1>
+  <div class='container grid'>
+    <% @users.each do |user| %>
+      <%= render partial: "shared/user", locals: { user: user } %>
+    <% end %>
+  </div>
 </section>
