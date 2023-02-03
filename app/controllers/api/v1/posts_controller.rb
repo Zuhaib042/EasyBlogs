@@ -4,4 +4,4 @@ class Api::V1::PostsController < Api::V1::ApplicationController
     @posts = @user.posts
     render json: @posts, status: :ok
   end
-end 
+end
